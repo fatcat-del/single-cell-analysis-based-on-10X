@@ -23,6 +23,8 @@ Go_gseresult <- gseGO(geneList, 'org.Mm.eg.db', keyType = "ENTREZID", ont="all",
 KEGG_gseresult <- gseKEGG(geneList, nPerm = 1000, minGSSize = 10, maxGSSize = 1000, pvalueCutoff=1, organism = "mmu")
 rectomepath <-enrichPathway(gene=aaa$ENTREZID,pvalueCutoff=0.05, readable=T, qvalueCutoff = 0.05, organism = "mouse")
 
+dotplot(KEGG,split=".sign")+facet_wrap(~.sign,scales = "free")
+
 
 
 
